@@ -201,17 +201,9 @@ h3 {
     text-decoration-line: underline;
 }
 
-li {
-    list-style-position: outside;
-}
-
-ul>li {
-    margin-left: 1em;
-    list-style-position: outside;
-}
-
-li:before {
-    content: "- ";
+.description {
+    padding-left : 2rem;
+    max-width    : 60rem;
 }
 
 a {

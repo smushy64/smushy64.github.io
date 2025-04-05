@@ -20,9 +20,11 @@ const set_color_mode = function ( color_mode_to_set ) {
     current_color_mode = color_mode_to_set;
 
     if( color_mode_to_set === "dark" ) {
-        document.getElementById( "toggle-mode-icon" ).innerHTML = "&#xE518;";
+        document.getElementById( "toggle-mode-icon-dark" ).style.setProperty( "display", "none" );
+        document.getElementById( "toggle-mode-icon-light" ).style.setProperty( "display", "" );
     } else {
-        document.getElementById( "toggle-mode-icon" ).innerHTML = "&#xE51C;";
+        document.getElementById( "toggle-mode-icon-light" ).style.setProperty( "display", "none" );
+        document.getElementById( "toggle-mode-icon-dark" ).style.setProperty( "display", "" );
     }
 }
 
