@@ -1,29 +1,35 @@
+@font-face {
+    font-family: "JetBrains Mono NL";
+    src: url( "../resources/typefaces/JetBrainsMonoNL-Regular.ttf" );
+}
+
 body {
-    font-size        : 16px;
-    font-family      : monospace;
-    background-color : var(--catppuccin-macchiato-mantle);
+    font-size        : 12px;
+    font-family      : "JetBrains Mono NL", monospace;
+    background-color : var(--catppuccin-mantle);
 }
 
 .status-bar {
     width            : 100vw;
-    height           : 1.6rem;
-    background-color : var(--catppuccin-macchiato-surface-0);
-    border           : 2px solid var(--catppuccin-macchiato-mantle);
+    height           : 2rem;
+    background-color : var(--catppuccin-surface-0);
+    box-sizing       : border-box;
+    border           : 2px solid var(--catppuccin-mantle);
     margin-bottom    : 24px;
-    color            : var(--catppuccin-macchiato-text);
+    color            : var(--catppuccin-text);
 
     display : flex;
     flex    : 1;
 }
 .status-bar-workspaces {
-    border-bottom : 4px solid var(--catppuccin-macchiato-pink);
+    border-bottom : 4px solid var(--catppuccin-pink);
     width         : 1.6rem;
     text-align    : center;
 
     padding: 4px 0;
 }
 .status-bar-workspaces:hover {
-    background-color: var(--catppuccin-macchiato-surface-1);
+    background-color: var(--catppuccin-surface-1);
 }
 
 .status-bar-time {
@@ -31,7 +37,7 @@ body {
     text-align    : center;
     padding-right : 10px;
 
-    color: var(--catppuccin-macchiato-pink);
+    color: var(--catppuccin-pink);
 }
 
 .status-bar-left-side {
@@ -40,31 +46,64 @@ body {
 
 .status-bar-right-side {
     flex-grow: 1;
-    display: flex;
-    flex-direction: row-reverse;
+    display        : flex;
+    flex-direction : row-reverse;
+}
+
+.status-bar-right-item {
+    margin: auto 0 auto 1rem;
+}
+
+.status-bar-button {
+    border          : 0;
+    background      : none;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+
+    box-sizing: border-box;
+    border-bottom : 4px solid var(--catppuccin-pink);
+}
+
+.status-bar-button:hover {
+    background-color: var(--catppuccin-surface-1);
+}
+
+.status-bar-button-content {
+}
+
+.material-symbols-outlined {
+    font-size   : 0.8rem;
+    color       : var(--catppuccin-text);
+}
+
+.status-bar-workspaces,
+.material-symbols-outlined,
+.status-bar-time,
+.window-title-bar {
+    user-select : none;
 }
 
 .window {
-    --window-border-color : var(--catppuccin-macchiato-surface-2);
-    --window-top-color    : var(--catppuccin-macchiato-surface-0);
-    --window-title-color  : var(--catppuccin-macchiato-text);
+    --window-border-color : var(--catppuccin-surface-2);
+    --window-top-color    : var(--catppuccin-surface-0);
+    --window-title-color  : var(--catppuccin-text);
 
-    background-color : var(--catppuccin-macchiato-base);
-    color            : var(--catppuccin-macchiato-text);
+    color : var(--catppuccin-text);
 
     display        : flex;
     flex-direction : column;
     flex           : 1;
 }
 .window:hover {
-    --window-border-color : var(--catppuccin-macchiato-lavender);
-    --window-top-color    : var(--catppuccin-macchiato-lavender);
-    --window-title-color  : var(--catppuccin-macchiato-crust);
+    --window-border-color : var(--catppuccin-lavender);
+    --window-top-color    : var(--catppuccin-lavender);
+    --window-title-color  : var(--catppuccin-crust);
 }
 .window-title-bar {
-    width            : 100%;
-    height           : 1.4rem;
-    padding          : 0;
+    width   : 100%;
+    height  : 1.4rem;
+    padding : 0;
 
     border-left-width  : 1px;
     border-right-width : 1px;
@@ -75,7 +114,8 @@ body {
     border-color     : var(--window-border-color);
     color            : var(--window-title-color);
 
-    align-items: center;
+    display     : flex;
+    align-items : center;
 }
 .window-client-area {
     width : 100%;
@@ -83,49 +123,77 @@ body {
     padding-top:1rem;
     padding-bottom:1rem;
 
-    background-color : var(--catppuccin-macchiato-base);
-    color            : var(--catppuccin-macchiato-text);
+    background-color : var(--catppuccin-base);
+    color            : var(--catppuccin-text);
 
     border-width: 1px;
     border-style: solid;
     border-color: var(--window-border-color);
+}
+.window-content {
+    padding: 0 8px;
 }
 
 #window-console {
     margin : auto;
     left   : 2.5vw;
     width  : 95vw;
-    height : 250px;
+
+    margin-bottom: 32px;
+}
+#window-console-client-area {
+    background-color: var(--catppuccin-base-transparent);
 }
 
 h1 {
-    color       : var(--catppuccin-macchiato-lavender);
+    color       : var(--catppuccin-lavender);
     font-weight : bold;
 }
 h2 {
-    color: var(--catppuccin-macchiato-red);
+    color: var(--catppuccin-red);
 }
 h3 {
-    color: var(--catppuccin-macchiato-peach);
+    color: var(--catppuccin-peach);
 }
 
 .prompt {
-    color: var(--catppuccin-macchiato-mauve);
+    color: var(--catppuccin-mauve);
 }
 .prompt-normal {
-    color: var(--catppuccin-macchiato-text);
+    color: var(--catppuccin-text);
 }
 
 .command {
-    color: var(--catppuccin-macchiato-green);
+    color: var(--catppuccin-green);
 }
 
 .console-cursor {
-    color: var(--catppuccin-macchiato-pink);
+    color                     : var(--catppuccin-pink);
+    animation-name            : blink;
+    animation-duration        : 1200ms;
+    animation-iteration-count : infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .argument {
-    color       : var(--catppuccin-macchiato-text);
+    color       : var(--catppuccin-text);
     font-weight : normal;
 }
 
@@ -147,18 +215,23 @@ li:before {
 }
 
 a {
-    color: var(--catppuccin-macchiato-lavender);
+    color: var(--catppuccin-lavender);
 }
 a:link {
     text-decoration-line: none;
 }
 a:visited {
-    color: var(--catppuccin-macchiato-blue);
+    color: var(--catppuccin-blue);
 }
 a:hover {
     text-decoration-line: underline;
 }
 a:active {
-    color: var(--catppuccin-macchiato-mauve);
+    color: var(--catppuccin-mauve);
+}
+
+#bottom-spacer {
+    /* background-color: red; */
+    height: 20px;
 }
 

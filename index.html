@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>smushy - homepage</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=light_mode">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode">
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/catppuccin-macchiato.css">
+        <link rel="stylesheet" href="css/catppuccin.css">
         <link rel="stylesheet" href="css/stylesheet.css">
     </head>
     <body>
@@ -16,16 +18,21 @@
                 </div>
             </div>
             <div class="status-bar-right-side">
-                <div class="status-bar-time" id="status-bar-time">
+                <div class="status-bar-time status-bar-right-item" id="status-bar-time">
                     04/05 02:12 AM
                 </div>
+                <button id="toggle-mode" class="status-bar-right-item status-bar-button">
+                    <div class="status-bar-button-content">
+                        <span class="material-symbols-outlined" id="toggle-mode-icon">light_mode</span>
+                    </div>
+                </button>
             </div>
         </div>
         <div class="window" id="window-console">
             <div class="window-title-bar">
                 console
             </div>
-            <div class="window-client-area">
+            <div class="window-client-area" id="window-console-client-area"> <div class="window-content">
                 <h1>
                     <span class="prompt">[alicia@sunny ~]</span>
                     <span class="prompt-normal">$</span>
@@ -63,24 +70,12 @@
                     <span class="argument path">LINKS.md</span>
                 </h1><br>
                 <h3> ## Links </h3><br>
-                -<a href="https://github.com/smushy64" target=_blank>
-                    smushy64 on github
-                </a><br>
-                -<a href="https://smushy64.itch.io/" target=_blank>
-                    smushy64 on itch.io
-                </a><br>
-                -<a href="https://bsky.app/profile/smushy64.itch.io" target=_blank>
-                    smushy64.itch.io on Bluesky
-                </a><br>
-                -<a href="https://www.twitch.tv/smushy64" target=_blank>
-                    smushy64 on Twitch
-                </a><br>
-                -<a href="https://discord.com/users/241326734698479626" target=_blank>
-                    smushy666 on Discord
-                </a><br>
-                -<a href="mailto:smushyaa@gmail.com">
-                    smushyaa@gmail.com
-                </a><br>
+                - <a href="https://github.com/smushy64" target=_blank>smushy64 on github</a><br>
+                - <a href="https://smushy64.itch.io/" target=_blank>smushy64 on itch.io</a><br>
+                - <a href="https://bsky.app/profile/smushy64.itch.io" target=_blank>smushy64.itch.io on Bluesky</a><br>
+                - <a href="https://www.twitch.tv/smushy64" target=_blank>smushy64 on Twitch</a><br>
+                - <a href="https://discord.com/users/241326734698479626" target=_blank>smushy666 on Discord</a><br>
+                - <a href="mailto:smushyaa@gmail.com">smushyaa@gmail.com</a><br>
                 <br>
                 <h1>
                     <span class="prompt">[alicia@sunny ~]</span>
@@ -89,8 +84,8 @@
                     <span class="argument path">MISC.md</span>
                 </h1><br>
                 <p>
-                    Hosted on <a href="https://github.com" target=_blank>github.com</a><br>
-                    Using catppuccin colors.
+                    Hosted on <a href="https://github.com/smushy64/smushy64.github.io" target=_blank>github</a>.<br>
+                    Using colors from <a href="https://catppuccin.com/" target=_blank>catppuccin</a>.
                 </p><br>
                 <h1>
                     <span class="prompt">[alicia@sunny ~]</span>
@@ -98,32 +93,35 @@
                     <span class="command">neofetch</span>
                 </h1><br>
                 <p>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__.;=====;.__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alicia</span>@<span style="color:var(--catppuccin-macchiato-green)">sunny</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_.=+==++=++=+=+===;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>------------<br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-=+++=+===+=+=+++++=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>OS: Void Linux x86_64<br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-=:``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--==+=++==.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Kernel: 6.12.21_1<br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_vi,&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--+=++++:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Shell: zsh 5.9<br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.uvnvi.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_._&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-==+==+.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>WM: i3 (X11)<br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.vvnvnI`&nbsp;&nbsp;&nbsp;&nbsp;.;==|==;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:|=||=|.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Terminal: ghostty 1.1.3<br>
-<span style="color:var(--catppuccin-macchiato-surface-1)">+QmQQm<span style="color:var(--catppuccin-macchiato-green)">pvvnv;</span>&nbsp;_yYsyQQWUUQQQm&nbsp;#QmQ#<span style="color:var(--catppuccin-macchiato-green)">:</span>QQQWUVQm.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>CPU: AMD Ryzen 7 5800X (16) @ 4.85 GHz<br>
-<span style="color:var(--catppuccin-macchiato-surface-1)">&nbsp;-QQWQW<span style="color:var(--catppuccin-macchiato-green)">pvvo</span>wZ?.wQQQE<span style="color:var(--catppuccin-macchiato-green)">==&lt;</span>QWWQ/QWQW.QQWW<span style="color:var(--catppuccin-macchiato-green)">(:</span>&nbsp;jQWQE&nbsp;&nbsp;&nbsp;&nbsp;</span>GPU: NVIDIA GeForce RTX 4060 Ti [Discrete]<br>
-<span style="color:var(--catppuccin-macchiato-surface-1)">&nbsp;&nbsp;-&dollar;QQQQmmU'&nbsp;&nbsp;jQQQ<span style="color:var(--catppuccin-macchiato-green)">@+=&lt;</span>QWQQ)mQQQ.mQQQC<span style="color:var(--catppuccin-macchiato-green)">+;</span>jWQQ@'</span><br>
-<span style="color:var(--catppuccin-macchiato-surface-1)">&nbsp;&nbsp;&nbsp;-&dollar;WQ8Y<span style="color:var(--catppuccin-macchiato-green)">nI:</span>&nbsp;&nbsp;&nbsp;QWQQwgQQWV`mWQQ.jQWQQgyyWW@!</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1vvnvv.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`~+++`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++|+++</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+vnvnnv,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-|===</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+vnvnvns.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=-</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Invnvvnsi..___..=sv=.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+Invnvnvnnnnnnnnvvnn;.</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~|Invnvnvvnvvvnnv}+`</span><br>
-<span style="color:var(--catppuccin-macchiato-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-~|{*l}*|~</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--catppuccin-macchiato-surface-1)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-red)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-green)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-yellow)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-blue)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-pink)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-sapphire)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-subtext-1)">&block;&block;</span><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--catppuccin-macchiato-surface-1)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-red)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-green)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-yellow)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-blue)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-pink)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-sapphire)">&block;&block;</span><span style="color:var(--catppuccin-macchiato-subtext-1)">&block;&block;</span>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;__.;=====;.__&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alicia</span>@<span style="color:var(--catppuccin-green)">sunny</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_.=+==++=++=+=+===;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>------------<br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-=+++=+===+=+=+++++=_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>OS: Void Linux x86_64<br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-=:``&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`--==+=++==.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Kernel: 6.12.21_1<br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_vi,&nbsp;&nbsp;&nbsp;&nbsp;`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--+=++++:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Shell: zsh 5.9<br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.uvnvi.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_._&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-==+==+.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>WM: i3 (X11)<br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.vvnvnI`&nbsp;&nbsp;&nbsp;&nbsp;.;==|==;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:|=||=|.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Terminal: ghostty 1.1.3<br>
+<span style="color:var(--catppuccin-surface-1)">+QmQQm<span style="color:var(--catppuccin-green)">pvvnv;</span>&nbsp;_yYsyQQWUUQQQm&nbsp;#QmQ#<span style="color:var(--catppuccin-green)">:</span>QQQWUVQm.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>CPU: AMD Ryzen 7 5800X (16) @ 4.85 GHz<br>
+<span style="color:var(--catppuccin-surface-1)">&nbsp;-QQWQW<span style="color:var(--catppuccin-green)">pvvo</span>wZ?.wQQQE<span style="color:var(--catppuccin-green)">==&lt;</span>QWWQ/QWQW.QQWW<span style="color:var(--catppuccin-green)">(:</span>&nbsp;jQWQE&nbsp;&nbsp;&nbsp;&nbsp;</span>GPU: NVIDIA GeForce RTX 4060 Ti [Discrete]<br>
+<span style="color:var(--catppuccin-surface-1)">&nbsp;&nbsp;-&dollar;QQQQmmU'&nbsp;&nbsp;jQQQ<span style="color:var(--catppuccin-green)">@+=&lt;</span>QWQQ)mQQQ.mQQQC<span style="color:var(--catppuccin-green)">+;</span>jWQQ@'</span><br>
+<span style="color:var(--catppuccin-surface-1)">&nbsp;&nbsp;&nbsp;-&dollar;WQ8Y<span style="color:var(--catppuccin-green)">nI:</span>&nbsp;&nbsp;&nbsp;QWQQwgQQWV`mWQQ.jQWQQgyyWW@!</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1vvnvv.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`~+++`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;++|+++</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+vnvnnv,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`-|===</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+vnvnvns.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=-</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Invnvvnsi..___..=sv=.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+Invnvnvnnnnnnnnvvnn;.</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~|Invnvnvvnvvvnnv}+`</span><br>
+<span style="color:var(--catppuccin-green)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-~|{*l}*|~</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--catppuccin-surface-1)">&block;&block;</span><span style="color:var(--catppuccin-red)">&block;&block;</span><span style="color:var(--catppuccin-green)">&block;&block;</span><span style="color:var(--catppuccin-yellow)">&block;&block;</span><span style="color:var(--catppuccin-blue)">&block;&block;</span><span style="color:var(--catppuccin-pink)">&block;&block;</span><span style="color:var(--catppuccin-sapphire)">&block;&block;</span><span style="color:var(--catppuccin-subtext-1)">&block;&block;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--catppuccin-surface-1)">&block;&block;</span><span style="color:var(--catppuccin-red)">&block;&block;</span><span style="color:var(--catppuccin-green)">&block;&block;</span><span style="color:var(--catppuccin-yellow)">&block;&block;</span><span style="color:var(--catppuccin-blue)">&block;&block;</span><span style="color:var(--catppuccin-pink)">&block;&block;</span><span style="color:var(--catppuccin-sapphire)">&block;&block;</span><span style="color:var(--catppuccin-subtext-1)">&block;&block;</span>
                 </p><br>
                 <h1>
                     <span class="prompt">[alicia@sunny ~]</span>
                     <span class="prompt-normal">$</span>
+                    <span class="argument">smushy64 &copy; alicia amarilla 2025</span>
                     <span class="console-cursor">&block;</span>
                 </h1><br>
-            </div>
+            </div></div>
+        </div>
+        <div id="bottom-spacer">
         </div>
     </body>
     <script src="js/index.js"></script>
